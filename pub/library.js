@@ -28,7 +28,7 @@ function createIcons(){
 BackgroundGenerator.prototype = {
 
 	addSimpleBackground: function(){
-		const body = document.querySelector("body");
+		const body = document.querySelector("#background-layer");
 		
 		console.log(body);
 		body.style = "background-color: aqua";

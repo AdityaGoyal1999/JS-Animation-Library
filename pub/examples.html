@@ -6,14 +6,44 @@
     
     <title>Backgrorund Library</title>
 
+    <!-- The library doesn't depend on this. Just the demo will need this -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
     <script src="library.js"></script>
     <script defer src="examples.js"></script>
+    <link defer href="examples.css">
  </head>
  <body>
-    <div id="background-layer">
-        <h1>Demo</h1>
+ 	<nav>
+    <div class="nav-wrapper">
+    	<div class="container">
+	      <a href="#" class="brand-logo">Backgroundy</a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+	        <li><a href="#">Documentation</a></li>
+	      </ul>
+	    </div>
     </div>
+  	</nav>
+  	<div>
+  		<div class="container heading" style="text-align: center; height: 500px; padding-top: 100px; background-color: green; margin-top: 20px; margin-bottom: 20px;">
+  			<h2>Add beautiful backgrounds to your website in 5 minutes</h2>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div class="col s6">
+  			<div id="background-layer" class="sample-background">
+				Background Layer
+  			</div>
+  		</div>
+  		<div class="col s6">
+  			<div class="container">
+  				<h4>Simple Coloured Background</h4>
+  			</div>
+  		</div>
+  	</div>
+
  </body>
 
 </html>
