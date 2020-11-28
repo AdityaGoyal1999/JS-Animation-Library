@@ -8,6 +8,14 @@ app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/examples.html"));
 });
 
+app.get("/library.js", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/library.js"));
+});
+
+app.get("/examples.js", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/examples.js"));
+});
+
 app.listen(port, () => {
 	console.log(`Example app is listening on port http://localhost:${port}`);
 });
