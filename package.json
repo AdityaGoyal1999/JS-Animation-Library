@@ -1,0 +1,26 @@
+{
+  "name": "js-library-goyaladi",
+  "version": "1.0.0",
+  "description": "Background Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc309-fall-2020/js-library-goyaladi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "bugs": {
+    "url": "https://github.com/csc309-fall-2020/js-library-goyaladi/issues"
+  },
+  "homepage": "https://github.com/csc309-fall-2020/js-library-goyaladi#readme",
+  "engine": {
+    "node": "12.16.1"
+  }
+}
