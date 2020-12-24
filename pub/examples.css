@@ -1,8 +1,7 @@
-
-.sample-background{
-	padding: 100px;
-	margin: 30px;
-	border: 3px black solid;
+.demo-background{
+	border: 3px solid black;
+	height: 500px;
+	background-color: blue;
 }
 
 .heading{
@@ -11,4 +10,8 @@
 
 .background-example-heading{
 	padding: 10px;
+}
+
+.row{
+	padding: 20px;
 }
