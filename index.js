@@ -8,6 +8,10 @@ app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/examples.html"));
 });
 
+app.get("/documentation", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/documentation.html"));
+});
+
 app.get("/library.js", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/library.js"));
 });
@@ -18,6 +22,10 @@ app.get("/examples.js", (req, res) => {
 
 app.get("/examples.css", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/examples.css"));
+});
+
+app.get("/documentation.css", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/documentation.css"));
 });
 
 app.listen(port, () => {
