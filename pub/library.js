@@ -44,7 +44,7 @@ BackgroundGenerator.prototype = {
 		const bg = document.querySelector("#background-layer-4");
 		bg.style = "overflow: hidden; background: #000; position: relative;"
 		var style = document.createElement('style');
-			var keyFrames = 'span{\
+			var keyFrames = '.heartSpan{\
 				position: absolute;\
 				background: url(img/heart.png);\
 				pointer-events: none;\
@@ -59,6 +59,7 @@ BackgroundGenerator.prototype = {
 
 		bg.addEventListener("mousemove", function(e){
 			const heart = document.createElement("span");
+			heart.className = "heartSpan";
 			let x = e.offsetX;
 			let y = e.offsetY;
 			heart.style.left = x + 'px';
