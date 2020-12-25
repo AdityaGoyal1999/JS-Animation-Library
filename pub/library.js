@@ -40,7 +40,7 @@ BackgroundGenerator.prototype = {
 		});
 	},
 
-	starMouseTrail: function(){
+	heartMouseTrail: function(){
 		const bg = document.querySelector("#background-layer-4");
 		bg.style = "overflow: hidden; background: #000; position: relative;"
 		var style = document.createElement('style');
@@ -65,7 +65,47 @@ BackgroundGenerator.prototype = {
 			heart.style.left = x + 'px';
 			heart.style.top = y + 'px';
 			// console.log(x, y);
-			let size = Math.random() * 100;
+			let size = Math.random() * 30;
+			heart.style.width = 20 + size + 'px';
+			heart.style.height = 20 + size + 'px';
+			console.log(heart.style.width);
+			console.log(heart.style.height);
+			// heart.style="";
+			bg.appendChild(heart);
+
+			setTimeout(function(){
+				heart.remove();
+			}, 100);
+
+		});
+	},
+
+	starMouseTrail: function(){
+		const bg = document.querySelector("#background-layer-5");
+		bg.style = "overflow: hidden; background: #000; position: relative;"
+		var style = document.createElement('style');
+			var keyFrames = '.starSpan{\
+				position: absolute;\
+				background: url(img/tire.png);\
+				pointer-events: none;\
+				transform: translate(-50%, -50%);\
+				width: 100px;\
+				height: 100px;\
+				background-size: cover;\
+				animation: animate 2s linear infinite;\
+			}';
+			style.innerHTML = keyFrames;
+			document.getElementsByTagName('head')[0].appendChild(style);
+
+		bg.addEventListener("mousemove", function(e){
+			const heart = document.createElement("span");
+			heart.className = "starSpan";
+			let x = e.offsetX;
+			let y = e.offsetY;
+			heart.style.left = x + 'px';
+			heart.style.top = y + 'px';
+			// console.log(x, y);
+			let size = Math.random() * 30;
 			heart.style.width = 20 + size + 'px';
 			heart.style.height = 20 + size + 'px';
 			console.log(heart.style.width);
