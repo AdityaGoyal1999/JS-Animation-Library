@@ -43,11 +43,7 @@ BackgroundGenerator.prototype = {
 	starMouseTrail: function(){
 		const bg = document.querySelector("#background-layer-4");
 		bg.style = "overflow: hidden; background: #000; position: relative;"
-
-		bg.addEventListener("mousemove", function(e){
-
-			var style = document.createElement('style');
-            // style.type = 'text/css';
+		var style = document.createElement('style');
 			var keyFrames = 'span{\
 				position: absolute;\
 				background: url(img/heart.png);\
@@ -60,7 +56,8 @@ BackgroundGenerator.prototype = {
 			}';
 			style.innerHTML = keyFrames;
 			document.getElementsByTagName('head')[0].appendChild(style);
-			
+
+		bg.addEventListener("mousemove", function(e){
 			const heart = document.createElement("span");
 			let x = e.offsetX;
 			let y = e.offsetY;
@@ -77,7 +74,7 @@ BackgroundGenerator.prototype = {
 
 			setTimeout(function(){
 				heart.remove();
-			}, 2000);
+			}, 100);
 
 		});
 	},
