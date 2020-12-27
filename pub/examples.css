@@ -32,3 +32,18 @@
 #download-btn .material-icons{
 	font-size: 1rem;
 }
+
+.footer{
+	background-color: rgb(238, 239, 240);
+	min-height: 200px;
+	height: 8vh;
+}
+
+.footer a u{
+	color: #000; 
+}
+
+#github-img{
+	height: 100px;
+	margin-left: 300px;;
+}
