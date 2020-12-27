@@ -7,9 +7,10 @@ function BackgroundGenerator(){
 
 BackgroundGenerator.prototype = {
 
-	addSimpleBackground: function(){
+	wavyText: function(){
+		// TODO: enter the background color and text color
 		const bg = document.querySelector("#background-layer-1");
-		bg.style = "background-color: bisque";
+		bg.style = "background-color: #000";
 	},
 
 	rippleText: function(){

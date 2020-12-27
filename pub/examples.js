@@ -1,7 +1,7 @@
 
 addEventListener("DOMContentLoaded", ()=>{
 	const bg = new BackgroundGenerator();
-	bg.addSimpleBackground();
+	bg.wavyText();
 	bg.rippleText();
 	bg.heartMouseTrail();
 	bg.starMouseTrail();
