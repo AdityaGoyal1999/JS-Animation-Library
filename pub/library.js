@@ -60,6 +60,22 @@ BackgroundGenerator.prototype = {
 		});
 	},
 
+	eyesMotion: function(){
+
+		const bg = document.querySelector("#background-layer-2");
+		bg.style="background-color: rgb(234, 195, 135);"
+		const eyes = document.createElement("div");
+		eyes.className = "box";
+		for(let i = 0; i < 2; i++){
+			const eye = document.createElement("div");
+			eye.className = "eye";
+			eye.style="position: relative; width: 120px; height: 120px; display: block; background: white; margin: 0 20px; border-radius: 50%;"
+			eyes.append(eye);
+		}
+
+		bg.append(eyes);
+	},
+
 	rippleText: function(){
 		const texts = document.querySelectorAll(".ripple-text");
 		texts.forEach((text)=>{
