@@ -50,6 +50,16 @@
 	font-size: 1rem;
 }
 
+.background-layer-1{
+	text-align: center;
+}
+
+.wavy-text{
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 200px;
+}
+
 .footer{
 	background-color: rgb(238, 239, 240);
 	min-height: 200px;

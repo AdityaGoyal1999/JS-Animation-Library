@@ -11,6 +11,20 @@ BackgroundGenerator.prototype = {
 		// TODO: enter the background color and text color
 		const bg = document.querySelector("#background-layer-1");
 		bg.style = "background-color: #000";
+		const texts = bg.querySelectorAll(".wavy-text");
+		texts.forEach((text)=>{
+			const text_content = text.innerHTML;
+			text.style = "color: #fff";
+			text.innerHTML="";
+			// Adding spans to each letters in the text
+			for(let i=0; i < text_content.length; i++){
+				const letter_span = document.createElement("span");
+				letter_span.innerHTML = text_content[i];
+				letter_span.style = "color: #fff";
+				bg.append(letter_span);
+				console.log("done");
+			}
+		});
 	},
 
 	rippleText: function(){
