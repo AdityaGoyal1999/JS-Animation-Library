@@ -4,7 +4,7 @@ addEventListener("DOMContentLoaded", ()=>{
 	bg.wavyText();
 	bg.eyesMotion();
 	bg.rippleText();
-	bg.heartMouseTrail();
+	bg.starMouseTrail();
 	bg.starMouseTrail();
 	// bg.rippleButton();
 	// bg.addBubbles();

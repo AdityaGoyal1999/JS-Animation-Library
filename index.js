@@ -28,8 +28,8 @@ app.get("/documentation.css", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/documentation.css"));
 });
 
-app.get("/img/heart.png", (req, res) => {
-	res.sendFile(path.join(__dirname, "pub/img/heart.png"));
+app.get("/img/star.png", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/img/star.png"));
 });
 
 app.get("/img/tire.png", (req, res) => {
