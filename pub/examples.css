@@ -15,3 +15,20 @@
 .row{
 	padding: 20px;
 }
+
+#rocket{
+	width: 600px;
+}
+
+.btn-large{
+	background-color: rgb(223, 117, 118);
+}
+
+#download-btn{
+	background-color: #fff;
+	color: black;
+}
+
+#download-btn .material-icons{
+	font-size: 1rem;
+}
