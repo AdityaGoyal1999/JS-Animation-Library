@@ -1,7 +1,45 @@
 
 code{
-    background-color: bisque;
+    background-color: rgb(238, 239, 240);
     text-align: center;
-    /* padding: 10px;
-    margin: 5px; */
+    /* padding: 10px; */
+    /* margin: 5px; */
+}
+
+.code-block{
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(238, 239, 240);
+}
+
+.col .on-page-heading{
+    text-align:center;
+}
+
+.col .on-page-link{
+    margin: 120px;
+    color: #000;
+    text-decoration: underline;
+}
+
+.footer{
+	background-color: rgb(238, 239, 240);
+	min-height: 200px;
+    height: 7vh;
+    font-weight: 800;
+}
+
+.footer a u{
+	color: #000; 
+}
+
+#github-img{
+	height: 100px;
+    margin-left: 300px;;
+    margin-top: 50px;
+}
+
+.footer-info{
+    margin-top: 60px;
 }

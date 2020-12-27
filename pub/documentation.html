@@ -28,22 +28,50 @@
   	</nav>
  <body>
  	<div class="container">
-        <h2>About</h2>
-        The library is a front end library where the user can eaily connect multiple backgrounds from the provided pallete to one's webpage and make it more presentable.<br>
-        Moreover, this documentation contains robust information with examples for getting started.
-        <h2>Initializing the library</h2>
-        <div>
-        <ul>
-            <li>Make sure that library.js is present in your project.</li>
-            <li>Create a javascript file which is connected to your webpage where you want the library to perform its functions.</li>
-            <li>In the javascript file, when the contents of the attached HTML file is loaded, write the following code:</li>
-            <code>const bg = new BackgroundGenerator();</code>
-        </ul>
-        </div>
-        <h2>Credits</h2>
-        The code belongs to Aditya Goyal and all rights are owned by him. <br>
-        For contact, email him @ aditya.goyal@mail.utoronto.ca
+      <div class="row">
+        <div class="col s8">
+          <h2 id="about">About</h2>
+          Backgroundy is a front end DOM manipulation library powered by JavaScript. Leaveraging the tools provided, developers can add backgrounds and utilities which the end-user can interact with.<br>
+          
+          <h2 id="initializing">Initializing the library</h2>
+          <div>
+          <ol>
+              <li><a href="https://github.com/csc309-fall-2020/js-library-goyaladi">Download</a> the library from github.</li>
+              <li>Make sure that <code>library.js</code> is present in your project.</li>
+              <li>Create a javascript file which is connected to the webpage where you want the library to perform its functions.</li>
+              <li>In the javascript file, add the following code:</li>
+              <div class="code-block">
+                <code><span class="blue-text">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text">const bg = new BackgroundGenerator();</span><span class="blue-text"> };</span></code>
+              </div>
+              <li>To make the code more compact, you can remove all the file in the downloaded project except <code>library.js</code></li>
+          </ol>
+          </div>
+            <h2 id="credits">Credits</h2>
+            The code belongs to Aditya Goyal and all rights are owned by him. <br>
+            For contact, email him @ aditya.goyal@mail.utoronto.ca
+            </div>
+          <div class="col s4">
+            <h3 class="on-page-heading">On Page</h3>
+            <ul>
+              <li><a class="on-page-link" href="#about">About</a></li>
+              <li><a class="on-page-link" href="#initializing">Initializing</a></li>
+              <li><a class="on-page-link" href="#credits">Credits</a></li>
+            </ul>
+          </div>
      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s6 footer-info">Developed with ❤️ by <a href="https://www.linkedin.com/in/adi-goyal/" target="_blank"><u>Aditya Goyal</u></a><br>
+          Version 1.0.0</div>
+          <div class="col s6">
+            <!-- CITATION - https://www.subpng.com/png-t6saun/download.html -->
+            <a href="https://github.com/csc309-fall-2020/js-library-goyaladi" target="_blank"><img src="img/github.png" id="github-img"></a>
+          </div>
+        </div>
+      </div>
+    </div>
  </body>
 
 </html>
