@@ -74,18 +74,48 @@ BackgroundGenerator.prototype = {
 
 	eyesMotion: function(){
 
+		// Create the eyes of the background
 		const bg = document.querySelector("#background-layer-2");
-		bg.style="background-color: rgb(234, 195, 135);"
+		bg.style="background-color: rgb(234, 195, 135); display: flex; justify-content: center; align-items: center;"
 		const eyes = document.createElement("div");
-		eyes.className = "box";
+		eyes.className = "eyes";
+		eyes.style = "display: flex;"
 		for(let i = 0; i < 2; i++){
-			const eye = document.createElement("div");
+			let eye = document.createElement("div");
 			eye.className = "eye";
 			eye.style="position: relative; width: 120px; height: 120px; display: block; background: white; margin: 0 20px; border-radius: 50%;"
 			eyes.append(eye);
 		}
+		var style = document.createElement('style');
+		var keyFrames = '.eye::before{\
+			position: absolute;\
+			content: \'\';\
+			top: 50%;\
+			left: 35px;\
+			transform: translate(-50%, -50%);\
+			width: 45px;\
+			height: 45px;\
+			border-radius: 50%;\
+			background: #000;\
+			border: 10px solid #2196f3;\
+		}';
+		style.innerHTML = keyFrames;
+		document.getElementsByTagName('head')[0].appendChild(style);
 
 		bg.append(eyes);
+
+		// Make the eyes follow the cursor
+		bg.addEventListener("mousemove", function(){
+			const eyes = document.querySelectorAll('.eye');
+			eyes.forEach((eye)=>{
+				let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
+				let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+
+				let radian = Math.atan2(event.pageX - x, event.pageY - y);
+				let rotation = (radian * (180 / Math.PI) * -1) + 270;
+				eye.style.transform = "rotate("+rotation+"deg)";
+			});
+		})
 	},
 
 	rippleText: function(){
@@ -105,12 +135,11 @@ BackgroundGenerator.prototype = {
 		const spans = document.querySelectorAll(".ripple-text-span");
 		spans.forEach((span)=>{
 			span.addEventListener("mouseover", ()=>{
-				console.log("over");
+				// console.log("over");
 				span.style="color: blue; padding: 10px; font-size: 50px;"
 				
 			});
 			span.addEventListener("mouseout", ()=>{
-				// console.log("over");
 				span.style="color: black; padding: 0px;"
 			});
 		});
