@@ -28,6 +28,14 @@ app.get("/documentation.css", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/documentation.css"));
 });
 
+app.get("/all-examples", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/all-examples.html"));
+});
+
+app.get("/all-examples.css", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/all-examples.css"));
+});
+
 app.get("/img/star.png", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/img/star.png"));
 });
