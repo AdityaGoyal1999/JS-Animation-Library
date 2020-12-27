@@ -10,11 +10,11 @@ BackgroundGenerator.prototype = {
 	wavyText: function(){
 		// TODO: enter the background color and text color
 		const bg = document.querySelector("#background-layer-1");
-		bg.style = "background-color: #000";
+		
 		const texts = bg.querySelectorAll(".wavy-text");
 		texts.forEach((text)=>{
 			const text_content = text.innerHTML;
-			text.style = "color: #fff";
+			const parent_text = text.parentElement;
 			text.innerHTML="";
 			// Adding spans to each letters in the text
 			for(let i=0; i < text_content.length; i++){
@@ -22,9 +22,10 @@ BackgroundGenerator.prototype = {
 				letter_span.className = "letter-span";
 				letter_span.innerHTML = text_content[i];
 				let num = i+1;
-				letter_span.style=`--i:${num};`;
-				letter_span.style = "color: #fff";
-				bg.append(letter_span);
+				letter_span.style=`color: #000;\ 
+								   --i:${num};`;
+				
+				text.append(letter_span);
 			}
 		});
 
@@ -36,8 +37,6 @@ BackgroundGenerator.prototype = {
 					position: relative;\
 					display: inline-block;\
 					color: #fff;\
-					font-size: 2em;\
-					text-transform: uppercase;\
 					animation: animate 1s ease-in-out infinite;\
 					animation-delay: calc(0.1s * var(--i));\
 				}\
@@ -53,6 +52,19 @@ BackgroundGenerator.prototype = {
 					40%, 100%{\
 						transform: translateY(0px);\
 					}\
+				}';
+				style.innerHTML = keyFrames;
+				document.getElementsByTagName('head')[0].appendChild(style);
+			};
+
+			span.onmouseout = () =>{
+				var style = document.createElement('style');
+				var keyFrames = '.letter-span{\
+					position: relative;\
+					display: inline-block;\
+					color: #fff;\
+					animation: none;\
+					animation-delay: none;\
 				}';
 				style.innerHTML = keyFrames;
 				document.getElementsByTagName('head')[0].appendChild(style);
