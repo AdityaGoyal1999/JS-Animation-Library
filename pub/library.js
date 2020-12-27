@@ -19,11 +19,44 @@ BackgroundGenerator.prototype = {
 			// Adding spans to each letters in the text
 			for(let i=0; i < text_content.length; i++){
 				const letter_span = document.createElement("span");
+				letter_span.className = "letter-span";
 				letter_span.innerHTML = text_content[i];
+				let num = i+1;
+				letter_span.style=`--i:${num};`;
 				letter_span.style = "color: #fff";
 				bg.append(letter_span);
-				console.log("done");
 			}
+		});
+
+		const spans = bg.querySelectorAll(".letter-span");
+		spans.forEach((span)=>{
+			span.onmouseover = () =>{
+				var style = document.createElement('style');
+				var keyFrames = '.letter-span{\
+					position: relative;\
+					display: inline-block;\
+					color: #fff;\
+					font-size: 2em;\
+					text-transform: uppercase;\
+					animation: animate 1s ease-in-out infinite;\
+					animation-delay: calc(0.1s * var(--i));\
+				}\
+				\
+				@keyframes animate{\
+				\
+					0%{\
+						transform: translateY(0px);\
+					}\
+					20%{\
+						transform: translateY(-20px);\
+					}\
+					40%, 100%{\
+						transform: translateY(0px);\
+					}\
+				}';
+				style.innerHTML = keyFrames;
+				document.getElementsByTagName('head')[0].appendChild(style);
+			};
 		});
 	},
 
@@ -59,18 +92,18 @@ BackgroundGenerator.prototype = {
 		const bg = document.querySelector("#background-layer-4");
 		bg.style = "overflow: hidden; background: #000; position: relative;"
 		var style = document.createElement('style');
-			var keyFrames = '.heartSpan{\
-				position: absolute;\
-				background: url(img/heart.png);\
-				pointer-events: none;\
-				transform: translate(-50%, -50%);\
-				width: 100px;\
-				height: 100px;\
-				background-size: cover;\
-				animation: animate 2s linear infinite;\
-			}';
-			style.innerHTML = keyFrames;
-			document.getElementsByTagName('head')[0].appendChild(style);
+		var keyFrames = '.heartSpan{\
+			position: absolute;\
+			background: url(img/heart.png);\
+			pointer-events: none;\
+			transform: translate(-50%, -50%);\
+			width: 100px;\
+			height: 100px;\
+			background-size: cover;\
+			animation: animate 2s linear infinite;\
+		}';
+		style.innerHTML = keyFrames;
+		document.getElementsByTagName('head')[0].appendChild(style);
 
 		bg.addEventListener("mousemove", function(e){
 			const heart = document.createElement("span");
