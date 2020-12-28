@@ -219,6 +219,26 @@ BackgroundGenerator.prototype = {
 		});
 	},
 
+	imageSlider: function(){
+
+		const bg = document.querySelector("#background-layer-5");
+		const imgDiv = bg.querySelector(".image-slider");
+		imgDiv.style = "position: relative; object-fit:cover;";
+		const images = imgDiv.querySelectorAll(".image-slider-image");
+		images.forEach((image)=>{
+			image.style = "width: 100%; height: 100%; position: absolute;"
+		});
+		// creating navigation dots
+		for(let i = 0; i < images.length; i++)
+		{
+			let dot = document.createElement("div");
+			dot.className = "dot";
+			dot.style = "background-color: gray; width: 10px; height: 10px; margin: 10px; border-radius: 50%; border: 2px solid #000; display:inline"
+			bg.append(dot);
+			console.log("added")
+		}
+	},
+
 	// starMouseTrail: function(){
 	// 	const bg = document.querySelector("#background-layer-5");
 	// 	bg.style = "overflow: hidden; background: #000; position: relative;"
