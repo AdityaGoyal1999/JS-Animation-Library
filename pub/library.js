@@ -22,6 +22,7 @@ BackgroundGenerator.prototype = {
 				letter_span.className = "letter-span";
 				letter_span.innerHTML = text_content[i];
 				let num = i+1;
+				// save the unique index of each span in the span
 				letter_span.style=`color: ${textColor};\ 
 								   --index:${num};`;
 				text.append(letter_span);
@@ -56,6 +57,7 @@ BackgroundGenerator.prototype = {
 			};
 
 			span.onmouseout = () =>{
+				// Make the text back to normal when the cursor is not over the intended text
 				var style = document.createElement('style');
 				var keyFrames = `.letter-span{\
 					position: relative;\
@@ -78,12 +80,20 @@ BackgroundGenerator.prototype = {
 		const eyes = document.createElement("div");
 		eyes.className = "eyes";
 		eyes.style = "display: flex;"
+
 		for(let i = 0; i < 2; i++){
 			let eye = document.createElement("div");
 			eye.className = "eye";
-			eye.style="position: relative; width: 120px; height: 120px; display: block; background: white; margin: 0 20px; border-radius: 50%;"
+			eye.style = "position: relative;\
+						width: 120px;\
+						height: 120px; \
+						display: block; \
+						background: white; \
+						margin: 0 20px; \
+						border-radius: 50%;"
 			eyes.append(eye);
 		}
+		
 		var style = document.createElement('style');
 		var keyFrames = '.eye::before{\
 			position: absolute;\
@@ -103,15 +113,17 @@ BackgroundGenerator.prototype = {
 		bg.append(eyes);
 
 		// Make the eyes follow the cursor
-		bg.addEventListener("mousemove", function(){
+		bg.addEventListener("mousemove", function(event){
 			const eyes = document.querySelectorAll('.eye');
 			eyes.forEach((eye)=>{
 				let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
 				let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
 
-				let radian = Math.atan2(event.pageX - x, event.pageY - y);
+				let radian = Math.atan2(event.x - x, event.y - y);
+				
 				let rotation = (radian * (180 / Math.PI) * -1) + 270;
 				eye.style.transform = "rotate("+rotation+"deg)";
+				console.log(rotation);
 			});
 		})
 	},
