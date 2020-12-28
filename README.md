@@ -21,3 +21,6 @@
 ## About
 Backgroundy is a front end DOM manipulation library powered by JavaScript. Leaveraging the tools provided, developers can add backgrounds and utilities which the end-user can interact with.
 
+## Credits
+The code belongs to Aditya Goyal and all rights are owned by him. <br>
+For contact, email him @ aditya.goyal@mail.utoronto.ca
