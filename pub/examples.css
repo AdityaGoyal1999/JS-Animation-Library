@@ -60,6 +60,12 @@
 	margin-left: 300px;
 }
 
+.card-holder{
+	display: flex; 
+	justify-content: center; 
+	padding-top: 60px;
+}
+
 .footer{
 	background-color: rgb(238, 239, 240);
 	min-height: 200px;

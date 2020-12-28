@@ -52,6 +52,10 @@ app.get("/img/github.png", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/img/github.png"));
 });
 
+app.get("/img/girl.jpg", (req, res) => {
+	res.sendFile(path.join(__dirname, "pub/img/girl.jpg"));
+});
+
 app.listen(port, () => {
 	console.log(`Example app is listening on port http://localhost:${port}`);
 });

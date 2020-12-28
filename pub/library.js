@@ -97,7 +97,7 @@ BackgroundGenerator.prototype = {
 			height: 45px;\
 			border-radius: 50%;\
 			background: #000;\
-			border: 10px solid #2196f3;\
+			border: 10px solid rgb(110, 72, 39);\
 		}';
 		style.innerHTML = keyFrames;
 		document.getElementsByTagName('head')[0].appendChild(style);
@@ -118,31 +118,25 @@ BackgroundGenerator.prototype = {
 		})
 	},
 
-	rippleText: function(){
-		const texts = document.querySelectorAll(".ripple-text");
-		texts.forEach((text)=>{
-			const content = text.innerHTML.trim();
-			text.innerText = "";
-			
-			// Loop over each letter and assign span to all letters
-			for(let i = 0; i<content.length;i++){
-				let createdSpan = document.createElement("span");
-				createdSpan.innerHTML = content[i];
-				createdSpan.className = "ripple-text-span";
-				text.append(createdSpan);
-			}
-		});
-		const spans = document.querySelectorAll(".ripple-text-span");
-		spans.forEach((span)=>{
-			span.addEventListener("mouseover", ()=>{
-				// console.log("over");
-				span.style="color: blue; padding: 10px; font-size: 50px;"
-				
-			});
-			span.addEventListener("mouseout", ()=>{
-				span.style="color: black; padding: 0px;"
-			});
-		});
+	cardAnimation: function(){
+		const bg = document.querySelector("#background-layer-3");
+		const img = bg.querySelector("img");
+		img.style = "width: 200px;"
+		const parent = img.parentElement;
+		img.remove()
+		const card_title = bg.querySelector(".card-title");
+		const card_content = bg.querySelector(".card-content");
+		card_title.remove();
+		card_content.remove();
+		// console.log(card_title.innerHTML)
+		// bg.querySelector(".card-content").innerHTML = "";
+
+		// creating the card
+		const card = document.createElement("div");
+		card.className = "card";
+		card.style = "position: relative; width: 275px; height: 325px; background-color: rgb(238, 239, 240)";
+		// console.log(parent.innerHTML);
+		parent.append(card);
 	},
 
 	starMouseTrail: function(){
