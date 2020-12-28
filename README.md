@@ -13,6 +13,7 @@
               <li>In the javascript file, add the following code:</li>
               <div class="code-block">
                 <code><span class="blue-text">addEventListener("DOMContentLoaded", ()=>{</span><br><span>const bg = new BackgroundGenerator();</span><span> };</span></code>
+                        <li>Check out all the amazing features your can implement at the <a href="https://backgroundy.herokuapp.com/all-examples">Examples</a> page</li>
               </div>
             </ol>
           </div>
