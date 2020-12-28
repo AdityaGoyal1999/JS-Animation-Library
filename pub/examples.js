@@ -12,4 +12,6 @@ addEventListener("DOMContentLoaded", ()=>{
 	bg.starMouseTrail("40", "40", "#000", 100);
 
 	bg.imageSlider();
+	// Parameters -> (backgroundColor, backgroundWidth, backgroundHeight, movementSpeed, direction)
+	bg.backgroundMove("rgb(64, 224, 208)", "700px", "500px", 0.125, -1);
 });

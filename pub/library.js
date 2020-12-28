@@ -324,43 +324,33 @@ BackgroundGenerator.prototype = {
 		activeButton.style = "background-color: rbg(238, 239, 240); border: 2px solid black; border-radius: 50%; width: 10px; height: 10px; margin: 10px;";
 	},
 
-	// starMouseTrail: function(){
-	// 	const bg = document.querySelector("#background-layer-5");
-	// 	bg.style = "overflow: hidden; background: #000; position: relative;"
-	// 	var style = document.createElement('style');
-	// 		var keyFrames = '.starSpan{\
-	// 			position: absolute;\
-	// 			background: url(img/tire.png);\
-	// 			pointer-events: none;\
-	// 			transform: translate(-50%, -50%);\
-	// 			width: 100px;\
-	// 			height: 100px;\
-	// 			background-size: cover;\
-	// 			animation: animate 2s linear infinite;\
-	// 		}';
-	// 		style.innerHTML = keyFrames;
-	// 		document.getElementsByTagName('head')[0].appendChild(style);
+	backgroundMove: function(backgroundColor, backgroundWidth, backgroundHeight, movementSpeed, direction){
 
-	// 	bg.addEventListener("mousemove", function(e){
-	// 		const star = document.createElement("span");
-	// 		star.className = "starSpan";
-	// 		let x = e.offsetX;
-	// 		let y = e.offsetY;
-	// 		star.style.left = x + 'px';
-	// 		star.style.top = y + 'px';
-	// 		// console.log(x, y);
-	// 		let size = Math.random() * 30;
-	// 		star.style.width = 20 + size + 'px';
-	// 		star.style.height = 20 + size + 'px';
-	// 		console.log(star.style.width);
-	// 		console.log(star.style.height);
-	// 		// star.style="";
-	// 		bg.appendChild(star);
+		const bg = document.querySelector("#background-layer-6");
+		bg.style = `display: flex; \
+					justify-content: center; \
+					align-items: center; \
+					background-color: ${backgroundColor};`;
+		
+		const wall_div = document.createElement("div");
+		wall_div.className = "wallpaper-div";
+		wall_div.style = `height: 80%; \
+						width: 80%; \
+						margin: 10%; \
+						background: url(img/image-2.jpg);\
+						background-size: ${backgroundWidth} ${backgroundHeight};\
+						object-fit: cover;`;
+		
+		bg.append(wall_div);
 
-	// 		setTimeout(function(){
-	// 			star.remove();
-	// 		}, 100);
 
-	// 	});
-	// },
+		wall_div.addEventListener("mousemove", (event)=>{
+			
+			let x = direction * event.clientX * movementSpeed;
+			let y = direction * event.clientY * movementSpeed;
+
+			wall_div.style.backgroundPositionX = `${x}px`;
+			wall_div.style.backgroundPositionY = `${y}px`;
+		});
+	},
 }

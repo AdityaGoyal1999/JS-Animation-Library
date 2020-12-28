@@ -39,7 +39,9 @@
 
 .btn-large{
 	background-color: rgb(223, 117, 118);
+	margin-top: 10px;
 }
+
 
 #download-btn{
 	background-color: #fff;
@@ -85,9 +87,6 @@ code{
 	position: relative;
 }
 
-/* .card-holder:hover{
-	position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 0.5s ease; transformY: rotateY(180deg);
-} */
 
 .image-slider{
 	width: 80%;
