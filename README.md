@@ -12,7 +12,7 @@
               <li>Create a javascript file which is also connected to the webpage where you want the library to perform its functions.</li>
               <li>In the javascript file, add the following code:</li>
               <div class="code-block">
-                <code><span class="blue-text">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text">const bg = new BackgroundGenerator();</span><span class="blue-text"> };</span></code>
+                <code><span class="blue-text">addEventListener("DOMContentLoaded", ()=>{</span><br><span>const bg = new BackgroundGenerator();</span><span> };</span></code>
               </div>
             </ol>
           </div>
