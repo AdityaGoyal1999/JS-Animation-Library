@@ -121,7 +121,7 @@ BackgroundGenerator.prototype = {
 	cardAnimation: function(){
 		const bg = document.querySelector("#background-layer-3");
 		const img = bg.querySelector("img");
-		img.style = "width: 200px;"
+		img.style = "width: 250px;"
 		const parent = img.parentElement;
 		img.remove()
 		const card_title = bg.querySelector(".card-title");
@@ -134,9 +134,42 @@ BackgroundGenerator.prototype = {
 		// creating the card
 		const card = document.createElement("div");
 		card.className = "card";
-		card.style = "position: relative; width: 275px; height: 325px; background-color: rgb(238, 239, 240)";
-		// console.log(parent.innerHTML);
+		// card.style = "";
+		
+		// front side of the card
+		const front = document.createElement("div");
+		front.className = "front";
+		front.append(img);
+
+		front.style = "width: 100%; height: 100%; backface-visibility: hidden; background: green; position: absolute;"
+
+		const back = document.createElement("div");
+		back.className = "back";
+		back.innerHTML = "bye";
+		back.style = "width: 100%; height: 100%; backface-visibility: hidden; background: blue; position: absolute; transform: rotateY(180deg);"
+
+		card.append(front);
+		card.append(back);
+
 		parent.append(card);
+
+		var style = document.createElement('style');
+		var keyFrames = '.card{position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 1s ease;}\
+		\
+		.card:hover{\
+			transform: rotateY(180deg);\
+		}';
+		style.innerHTML = keyFrames;
+		document.getElementsByTagName('head')[0].appendChild(style);
+
+		// card.onmouseover = ()=>{
+		// 	// console.log("hello");
+		// 	card.style = "transform: rotateY(180deg); position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 0.5s ease;"
+		// };
+
+		// card.onmouseout = () => {
+		// 	card.style = "position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 0.5s ease;"
+		// };
 	},
 
 	starMouseTrail: function(){
