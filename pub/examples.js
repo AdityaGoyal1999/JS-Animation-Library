@@ -1,5 +1,5 @@
 
-addEventListener("DOMContentLoaded", ()=>{
+addEventListener("DOMContentLoaded", () => {
 	const bg = new BackgroundGenerator();
 	
 	// Parameters -> (text-color, background-color, pixelsBounce, animationSpeed)

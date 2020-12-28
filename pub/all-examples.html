@@ -6,7 +6,8 @@
     
     <title>Backgrorund Library</title>
 
-    <!-- The library doesn't depend on this. Just the demo will need this -->
+	<!-- The library doesn't depend on this. Just the demo will need this -->
+	<!-- Many components of the landing page will use font provided by MaterializeCSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -16,6 +17,8 @@
     <link rel="stylesheet" href="all-examples.css">
  </head>
  <body>
+
+	<!-- CITATION - materializecss -->
  	<nav>
     <div class="nav-wrapper">
     	<div class="container">
@@ -27,17 +30,17 @@
 	    </div>
     </div>
 	</nav>
+	<!--  -->
 
-
-	
+	<!-- CITATION - materializecss - row and col grid -->
 	<div class="row">
 		<div class="col s9">
 			<h2 id="examples-heading">All Examples</h2>
 			<p class="para-info" id="para-info">Experience all the amazing Backgroundy examples<br><a href="documentation" class="waves-effect waves-light btn-large">Get Started</a></p>
 	
+			<!-- CITATION - materializecss -container -->
 			<div class="container">
 
-			<!-- Example begins -->
 			<div class="container">
 				<h4 class="background-example-heading" id="wavy-text-animation">Wavy Text</h4>
 				<p class="example-info">The text appears normal until the mouse hovers over it and starts a wavy effect.<br><br>Devs can change background color, text color, bounce height and animation speed to suit their purpose.<br><br>Get hovering!</p>
@@ -50,6 +53,7 @@
 			<h4 class="implementation" id="wavy-text-implementation">Implementation</h4>
 			<h5 class="implementation">JavaScript</h5>
 			<div class="code-block">
+				<!-- CITATION - materializecss - blue-text & red-text-->
 				<code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.wavyText("#000", "#fff", 20, 1.25);</span><span class="blue-text"> };</span></code>
 			</div>
 			<p class="example-info implementation">You can alter the Wavy Text to suit the aesthetic of your website by passing the following required parameters -> (textColor, backgroundColor, pixelsBounceText, animationSpeed) to wavyText()</p>
@@ -66,6 +70,7 @@
 				</pre></code>
 			</div>
 
+			<!-- CITATION - materializecss - container-->
 			<div class="container">
 				<h4 class="background-example-heading" id="eyes-move-animation">Eyes Move</h4>
 				<p class="example-info">The eyes of the background goes where ever the user takes the mouse. Also, the eyes blink!<br><br>Devs can change background color, eye color, eye lash color to suit their aesthetic purpose.<br><br>Get blinking!</p>
@@ -147,7 +152,7 @@
 			</div>
 
 			
-			<!-- CITATION - https://pixabay.com/photos/glacier-iceberg-lake-water-cold-5760277/ -->
+			<!-- CITATION - https://pixabay.com/photos/glacier-iceberg-lake-water-cold-5760277/ - Glacier image in the wallpaper-->
 			<div class="container">
 				<h4 class="background-example-heading" id="wallpaper-move-animation">Wallpaper Move Animation</h4>
 				<p class="example-info">The wallpaper moves according to the user moving the cursor on the background image in an interactive manner.<br><br>Devs can change backgroundColor, backgroundWidth, backgroundHeight, movementSpeed & direction of wallpaper movement to suit their aesthetic purpose.<br><br>Get Moving!</p>
@@ -172,7 +177,7 @@
 		</div>
 	</div>
 	
-		
+		<!-- CITATION - materializecss - col & row-->
 		<div class="col s3" style="position: fixed; margin-left: 70%;">
 			<h3 class="on-page-heading">On Page</h3>
             <ul>

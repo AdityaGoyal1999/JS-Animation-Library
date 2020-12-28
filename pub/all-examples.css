@@ -57,13 +57,9 @@
 
 code{
     background-color: rgb(238, 239, 240);
-    /* text-align: center; */
-    /* padding: 10px; */
-    /* margin: 5px; */
 }
 
 .code-block{
-    /* text-align: center; */
     margin: 20px;
     padding: 10px;
     background-color: rgb(238, 239, 240);
@@ -96,7 +92,6 @@ code{
 }
 
 .on-page-heading{
-	/* text-align:center; */
 	margin-left: 0px;
 }
 

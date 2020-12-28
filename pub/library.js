@@ -32,6 +32,8 @@ BackgroundGenerator.prototype = {
 		const spans = bg.querySelectorAll(".letter-span");
 		spans.forEach((span)=>{
 			span.onmouseover = () =>{
+
+				// CITATION for adding CSS directly from JavaScript- https://stackoverflow.com/questions/11371550/change-hover-css-properties-with-javascript
 				var style = document.createElement('style');
 				var keyFrames = `.letter-span{\
 					position: relative;\
@@ -54,10 +56,12 @@ BackgroundGenerator.prototype = {
 				}`;
 				style.innerHTML = keyFrames;
 				document.getElementsByTagName('head')[0].appendChild(style);
+	
 			};
 
 			span.onmouseout = () =>{
 				// Make the text back to normal when the cursor is not over the intended text
+				// CITATION for adding CSS directly from JavaScript- https://stackoverflow.com/questions/11371550/change-hover-css-properties-with-javascript
 				var style = document.createElement('style');
 				var keyFrames = `.letter-span{\
 					position: relative;\
@@ -259,6 +263,7 @@ BackgroundGenerator.prototype = {
 					background: ${backgroundColor}; \
 					position: relative;`
 
+		// CITATION for way of adding CSS directly from JavaScript- https://stackoverflow.com/questions/11371550/change-hover-css-properties-with-javascript
 		var style = document.createElement('style');
 		var keyFrames = `.starSpan{\
 			background: url(img/star.png);\
@@ -270,6 +275,7 @@ BackgroundGenerator.prototype = {
 		}`;
 		style.innerHTML = keyFrames;
 		document.getElementsByTagName('head')[0].appendChild(style);
+		// citation end 
 
 		bg.addEventListener("mousemove", function(e){
 			const star = document.createElement("span");

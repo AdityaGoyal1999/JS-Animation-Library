@@ -56,16 +56,8 @@ app.get("/img/girl.jpg", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/img/girl.jpg"));
 });
 
-app.get("/img/image-1.jpg", (req, res) => {
-	res.sendFile(path.join(__dirname, "pub/img/image-1.jpg"));
-});
-
 app.get("/img/image-2.jpg", (req, res) => {
 	res.sendFile(path.join(__dirname, "pub/img/image-2.jpg"));
-});
-
-app.get("/img/image-3.jpg", (req, res) => {
-	res.sendFile(path.join(__dirname, "pub/img/image-3.jpg"));
 });
 
 app.listen(port, () => {
