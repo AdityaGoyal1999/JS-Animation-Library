@@ -139,14 +139,21 @@ BackgroundGenerator.prototype = {
 		// front side of the card
 		const front = document.createElement("div");
 		front.className = "front";
-		front.append(img);
+		const imgDiv = document.createElement("div");
+		img.style = " object-fit: cover; width: 200px; height: 200px;"
+		imgDiv.style = "display: flex; justify-content: center; align-items: center; margin-top: 20px;"
+		imgDiv.append(img);
+		front.append(imgDiv);
+		card_title.style = "text-align: center; text-decoration: underline;"
+		front.append(card_title);
 
-		front.style = "width: 100%; height: 100%; backface-visibility: hidden; background: green; position: absolute;"
+		front.style = "width: 100%; height: 100%; backface-visibility: hidden; position: absolute;"
 
 		const back = document.createElement("div");
 		back.className = "back";
 		back.innerHTML = "bye";
-		back.style = "width: 100%; height: 100%; backface-visibility: hidden; background: blue; position: absolute; transform: rotateY(180deg);"
+		back.append(card_content);
+		back.style = "width: 100%; height: 100%; backface-visibility: hidden; position: absolute; transform: rotateY(180deg);"
 
 		card.append(front);
 		card.append(back);

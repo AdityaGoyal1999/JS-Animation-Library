@@ -54,18 +54,28 @@
 	text-align: center;
 }
 
-.wavy-text{
+.wavy-text-div{
 	position: absolute;
 	margin-top: 200px;
 	margin-left: 300px;
 }
+
+.card-holder{
+	display: flex; 
+	justify-content: center; 
+	padding-top: 60px;
+	position: relative;
+}
+
+/* .card-holder:hover{
+	position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 0.5s ease; transformY: rotateY(180deg);
+} */
 
 .footer{
 	background-color: rgb(238, 239, 240);
 	min-height: 200px;
     height: 8vh;
     font-weight: 800;
-    margin-top: 600px;
 }
 
 .footer a u{
