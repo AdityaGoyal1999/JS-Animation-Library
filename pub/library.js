@@ -23,8 +23,7 @@ BackgroundGenerator.prototype = {
 				letter_span.innerHTML = text_content[i];
 				let num = i+1;
 				letter_span.style=`color: ${textColor};\ 
-								   --i:${num};`;
-				
+								   --index:${num};`;
 				text.append(letter_span);
 			}
 		});
@@ -37,7 +36,7 @@ BackgroundGenerator.prototype = {
 					position: relative;\
 					color: ${backgroundColor};\
 					animation: wave ${animationTime}s infinite ease-in-out;\
-					animation-delay: calc(0.1s * var(--i));\
+					animation-delay: calc(0.1s * var(--index));\
 				}\
 				\
 				@keyframes wave{\
