@@ -72,11 +72,13 @@ BackgroundGenerator.prototype = {
 		});
 	},
 
-	eyesMotion: function(){
+	eyesMotion: function(backgroundColor, eyeColor, eyeLashColor){
 
-		// Create the eyes of the background
+		// Create the structure of the eyes
 		const bg = document.querySelector("#background-layer-2");
-		bg.style="background-color: rgb(234, 195, 135); display: flex; justify-content: center; align-items: center;"
+		bg.style = `background-color: ${backgroundColor}; \
+					display: flex; justify-content: center; \
+					align-items: center;`
 		const eyes = document.createElement("div");
 		eyes.className = "eyes";
 		eyes.style = "display: flex;"
@@ -87,16 +89,16 @@ BackgroundGenerator.prototype = {
 			eye.style = "position: relative;\
 						width: 100px;\
 						height: 100px; \
-						margin: 20px;\
+						margin: 10px;\
 						border-radius: 10%;"
 			const eyeSocket = document.createElement("div");
 			eyeSocket.className = "eyeSocket";
 
 			const eyeLash = document.createElement("div");
 			eyeLash.className = "eyeLash";
-			eyeLash.style = "background-color: rgb(204, 175, 115); \
+			eyeLash.style = `background-color: ${eyeLashColor}; \
 							height: 10px;\
-							animation: none";
+							animation: none;`;
 			var style = document.createElement('style');
 			var keyFrames = `@keyframes blink{\
 				0%{\
@@ -115,7 +117,9 @@ BackgroundGenerator.prototype = {
 			style.innerHTML = keyFrames;
 			document.getElementsByTagName('head')[0].appendChild(style);
 
-			eyeSocket.style = "background-color: white; margin: 20px; border-radius: 10%; overflow: hidden;"
+			eyeSocket.style = "background-color: #fff; margin: 20px; \
+							border-radius: 10%; \
+							overflow: hidden;"
 			eyeSocket.append(eyeLash);
 			eyeSocket.append(eye)
 			eyes.append(eyeSocket);
@@ -123,18 +127,15 @@ BackgroundGenerator.prototype = {
 
 		
 		var style = document.createElement('style');
-		var keyFrames = '.eye::before{\
+		var keyFrames = `.eye::before{\
 			position: absolute;\
 			content: \'\';\
 			top: 50%;\
 			left: 35px;\
-			transform: translate(-50%, -50%);\
-			width: 45px;\
-			height: 45px;\
 			border-radius: 50%;\
-			background: #000;\
-			border: 10px solid rgb(110, 72, 39);\
-		}';
+			border: 10px solid ${eyeColor};\
+			transform: translate(-50%, -50%);\
+		}`;
 		style.innerHTML = keyFrames;
 		document.getElementsByTagName('head')[0].appendChild(style);
 
@@ -142,32 +143,32 @@ BackgroundGenerator.prototype = {
 
 		// Make the eyes follow the cursor
 		bg.addEventListener("mousemove", function(event){
+
 			const eyes = document.querySelectorAll('.eye');
 			eyes.forEach((eye)=>{
-				let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2);
-				let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
 
+				// finding the x and y coordinate of eye
+				let x = eye.clientWidth + eye.getBoundingClientRect().left;
+				let y = eye.clientHeight + eye.getBoundingClientRect().top;
+
+				// finding angle in eye and cursor in radians
 				let radian = Math.atan2(event.x - x, event.y - y);
 				
-				let rotation = (radian * (180 / Math.PI) * -1) + 270;
-				eye.style.transform = "rotate("+rotation+"deg)";
-				// console.log(rotation);
+				let degree = (radian * (180 / 3.14));
+				let fixing = degree * -1 + 270;
+
+				eye.style.transform = `rotate(${fixing}deg)`;
+				
+			});
+
+			//  keep the eye lashes moving
+			const eyeLashes = bg.querySelectorAll(".eyeLash");
+			eyeLashes.forEach((eyeLash) => {
+				eyeLash.style = `background-color: ${eyeLashColor}; \
+				height: 10px;\
+				animation: blink 4s infinite;`;
 			});
 		})
-
-		// Eye lashes close when the coursor is over the eye
-		const eyeSockets = bg.querySelectorAll(".eye-socket");
-		eyeSockets.forEach((eyeSocket) => {
-			eyeSocket.addEventListener("mouseover", ()=>{
-				console.log("over");
-				const eyeLashes = bg.querySelectorAll(".eyeLash");
-				eyeLashes.forEach((eyeLash) => {
-					eyeLash.style = "background-color: rgb(204, 175, 115); \
-					height: 10px;\
-					animation: blink 10s infinite;";
-				});
-			})
-		});
 	},
 
 	cardAnimation: function(){

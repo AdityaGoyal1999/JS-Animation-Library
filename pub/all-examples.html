@@ -66,12 +66,27 @@
 			</div>
 
 			<div class="container">
-				<h4 class="background-example-heading">Eyes Move</h4>
-				<p class="example-info">The eyes of the background are responsive to the cursor and move wherever it goes.<br><br>Have a shot!</p>
+				<h4 class="background-example-heading" id="eyes-move-animation">Eyes Move</h4>
+				<p class="example-info">The eyes of the background goes where ever the user takes the mouse. Also, the eyes blink!<br><br>Devs can change background color, eye color, eye lash color to suit their aesthetic purpose.<br><br>Get blinking!</p>
 			</div>
 			<div id="background-layer-2" class="sample-background">
 			</div>
 
+			<h4 class="implementation" id="eyes-move-implementation">Implementation</h4>
+			<h5 class="implementation">JavaScript</h5>
+			<div class="code-block">
+				<code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.eyesMotion("rgb(234, 195, 135)", "rgb(110, 72, 39)", "rgb(204, 175, 115)");</span><span class="blue-text"> };</span></code>
+			</div>
+			<p class="example-info implementation">You can alter the colors of different parts of this background to suit the aesthetic of your website by passing the following required parameters -> (backgroundColor, eyeColor, eyeLashColor) to eyesMotion()</p>
+			
+			<h5 class="implementation">HTML</h5>
+			<p class="example-info implementation">Note: The Red ids and classes are important in HTML for library to function.</p>
+			<div class="code-block">
+                <code><span class="blue-text"><pre>
+	&lt id=<span class="red-text">"background-layer-2"</span> class="sample-background"&gt
+	&lt/div&gt
+				</pre></code>
+			</div>
 
 			<div class="container">
 				<h4 class="background-example-heading">Card Flip Animation</h4>
@@ -119,7 +134,9 @@
 			  <li><a class="on-page-link" href="#wavy-text-animation">Wavy Text</a></li>
 				  <li><a class="on-page-sublink" href="#background-layer-1">Example</a></li>
 				  <li><a class="on-page-sublink" href="#wavy-text-implementation">Implementation</a></li>
-              <li><a class="on-page-link" href="#">Eyes Move</a></li>
+			  <li><a class="on-page-link" href="#eyes-move-animation">Eyes Move</a></li>
+				  <li><a class="on-page-sublink" href="#background-layer-2">Example</a></li>
+				  <li><a class="on-page-sublink" href="#eyes-move-implementation">Implementation</a></li>
               <li><a class="on-page-link" href="#">Credits</a></li>
             </ul>
 		</div>
