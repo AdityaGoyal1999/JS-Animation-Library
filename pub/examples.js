@@ -10,9 +10,6 @@ addEventListener("DOMContentLoaded", ()=>{
 	bg.cardAnimation("275px", "325px", "rgb(238, 239, 240)");
 	// Parameters -> (starWidth, starHeight, backgroundColor, mouseTrailLength)
 	bg.starMouseTrail("40", "40", "#000", 100);
+
 	bg.imageSlider();
-	// bg.starMouseTrail();
-	// bg.rippleButton();
-	// bg.addBubbles();
-	// bg.iconsBackground();
 });
