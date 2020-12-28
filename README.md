@@ -3,7 +3,7 @@
 ## Links
 <a href="https://backgroundy.herokuapp.com" target="_blank">Heroku/Online Page</a>
 
-#Getting Started
+# Getting Started
 <h2 id="initializing">Initializing the library</h2>
           <div>
           <ol>
