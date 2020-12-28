@@ -2,6 +2,8 @@
 
 ## Links
 <a href="https://backgroundy.herokuapp.com" target="_blank">Heroku/Online Page</a>
+<a href="https://backgroundy.herokuapp.com/documentation" target="_blank">Docs</a>
+<a href="https://backgroundy.herokuapp.com/all-examples" target="_blank">All Examples</a>
 
 # Getting Started
 <h2 id="initializing">Initializing the library</h2>
