@@ -166,7 +166,7 @@ BackgroundGenerator.prototype = {
 			eyeLashes.forEach((eyeLash) => {
 				eyeLash.style = `background-color: ${eyeLashColor}; \
 				height: 10px;\
-				animation: blink 4s infinite;`;
+				animation: blink 3s infinite;`;
 			});
 		});
 	},
@@ -180,7 +180,7 @@ BackgroundGenerator.prototype = {
 		const card_title = bg.querySelector(".card-title");
 		const card_content = bg.querySelector(".card-content");
 		card_title.remove();
-		card_content.remove();
+		// card_content.remove();
 		// console.log(card_title.innerHTML)
 		// bg.querySelector(".card-content").innerHTML = "";
 
@@ -200,74 +200,87 @@ BackgroundGenerator.prototype = {
 		card_title.style = "text-align: center; text-decoration: underline;"
 		front.append(card_title);
 
-		front.style = "width: 100%; height: 100%; backface-visibility: hidden; position: absolute;"
+		front.style = "width: 100%; \
+						height: 100%; \
+						backface-visibility: \
+						hidden; \
+						position: absolute;"
 
 		const back = document.createElement("div");
 		back.className = "back";
-		back.innerHTML = "bye";
+
 		back.append(card_content);
-		back.style = "width: 100%; height: 100%; backface-visibility: hidden; position: absolute; transform: rotateY(180deg);"
+		back.style = "width: 100%; \
+					height: 100%; \
+					backface-visibility: hidden; \
+					position: absolute; \
+					transform: rotateY(180deg);"
 
 		card.append(front);
 		card.append(back);
-
+		card.style = "position: relative; \
+						width: 275px; \
+						height: 325px; \
+						background-color: rgb(238, 239, 240); \
+						transform-style: preserve-3d; \
+						transition: all 1s;"
 		parent.append(card);
 
-		var style = document.createElement('style');
-		var keyFrames = '.card{position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 1s ease;}\
-		\
-		.card:hover{\
-			transform: rotateY(180deg);\
-		}';
-		style.innerHTML = keyFrames;
-		document.getElementsByTagName('head')[0].appendChild(style);
+		card.addEventListener("mouseover", () => {
+			card.style = "transform: rotateY(180deg);position: relative; \
+			width: 275px; \
+			height: 325px; \
+			background-color: rgb(238, 239, 240); \
+			transform-style: preserve-3d; \
+			transition: all 1s;";
+		});
 
-		// card.onmouseover = ()=>{
-		// 	// console.log("hello");
-		// 	card.style = "transform: rotateY(180deg); position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 0.5s ease;"
-		// };
+		card.addEventListener("mouseout", () => {
+			card.style = "position: relative; \
+			width: 275px; \
+			height: 325px; \
+			background-color: rgb(238, 239, 240); \
+			transform-style: preserve-3d; \
+			transition: all 1s;"
+		});
 
-		// card.onmouseout = () => {
-		// 	card.style = "position: absolute; width: 275px; height: 325px; background-color: rgb(238, 239, 240); transform-style: preserve-3d; transition: all 0.5s ease;"
-		// };
 	},
 
-	starMouseTrail: function(){
+	starMouseTrail: function(starWidth, starHeight, backgroundColor, trailLength){
 		const bg = document.querySelector("#background-layer-4");
-		bg.style = "overflow: hidden; background: #000; position: relative;"
+		bg.style = `overflow: hidden; \
+					background: ${backgroundColor}; \
+					position: relative;`
+
 		var style = document.createElement('style');
-		var keyFrames = '.starSpan{\
-			position: absolute;\
+		var keyFrames = `.starSpan{\
 			background: url(img/star.png);\
+			position: absolute;\
+			background-size: 100%;\
 			pointer-events: none;\
-			transform: translate(-50%, -50%);\
-			width: 100px;\
-			height: 100px;\
-			background-size: cover;\
-			animation: animate 2s linear infinite;\
-		}';
+			transform: translate(-40%, -40%);\
+			animation: animate 2.25s infinite linear;\
+		}`;
 		style.innerHTML = keyFrames;
 		document.getElementsByTagName('head')[0].appendChild(style);
 
 		bg.addEventListener("mousemove", function(e){
 			const star = document.createElement("span");
 			star.className = "starSpan";
+
 			let x = e.offsetX;
 			let y = e.offsetY;
+			
 			star.style.left = x + 'px';
+			star.style.width = `${starWidth}px`;
 			star.style.top = y + 'px';
-			// console.log(x, y);
-			let size = Math.random() * 30;
-			star.style.width = 20 + size + 'px';
-			star.style.height = 20 + size + 'px';
-			console.log(star.style.width);
-			console.log(star.style.height);
-			// star.style="";
+			star.style.height = `${starHeight}px`;
+
 			bg.appendChild(star);
 
 			setTimeout(function(){
 				star.remove();
-			}, 100);
+			}, trailLength);
 
 		});
 	},
