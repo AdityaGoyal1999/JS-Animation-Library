@@ -116,7 +116,7 @@ BackgroundGenerator.prototype = {
 			}`;
 			style.innerHTML = keyFrames;
 			document.getElementsByTagName('head')[0].appendChild(style);
-
+			// eye socket color will always remain white
 			eyeSocket.style = "background-color: #fff; margin: 20px; \
 							border-radius: 10%; \
 							overflow: hidden;"
@@ -142,7 +142,7 @@ BackgroundGenerator.prototype = {
 		bg.append(eyes);
 
 		// Make the eyes follow the cursor
-		bg.addEventListener("mousemove", function(event){
+		bg.addEventListener("mousemove", (event) => {
 
 			const eyes = document.querySelectorAll('.eye');
 			eyes.forEach((eye)=>{
@@ -168,7 +168,7 @@ BackgroundGenerator.prototype = {
 				height: 10px;\
 				animation: blink 4s infinite;`;
 			});
-		})
+		});
 	},
 
 	cardAnimation: function(){

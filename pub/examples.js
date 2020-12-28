@@ -8,7 +8,7 @@ addEventListener("DOMContentLoaded", ()=>{
 	bg.eyesMotion("rgb(234, 195, 135)", "rgb(110, 72, 39)", "rgb(204, 175, 115)");
 	bg.cardAnimation();
 	bg.starMouseTrail();
-	// bg.imageSlider();
+	bg.imageSlider();
 	// bg.starMouseTrail();
 	// bg.rippleButton();
 	// bg.addBubbles();
