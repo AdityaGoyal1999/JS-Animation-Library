@@ -85,14 +85,42 @@ BackgroundGenerator.prototype = {
 			let eye = document.createElement("div");
 			eye.className = "eye";
 			eye.style = "position: relative;\
-						width: 120px;\
-						height: 120px; \
-						display: block; \
-						background: white; \
-						margin: 0 20px; \
-						border-radius: 50%;"
-			eyes.append(eye);
+						width: 100px;\
+						height: 100px; \
+						margin: 20px;\
+						border-radius: 10%;"
+			const eyeSocket = document.createElement("div");
+			eyeSocket.className = "eyeSocket";
+
+			const eyeLash = document.createElement("div");
+			eyeLash.className = "eyeLash";
+			eyeLash.style = "background-color: rgb(204, 175, 115); \
+							height: 10px;\
+							animation: none";
+			var style = document.createElement('style');
+			var keyFrames = `@keyframes blink{\
+				0%{\
+					height:10%;\
+				}\
+				1%{\
+					height: 100%;\
+				}\
+				2%{\
+					height: 10%;\
+				}\
+				100%{\
+					height: 10%;\
+				}\
+			}`;
+			style.innerHTML = keyFrames;
+			document.getElementsByTagName('head')[0].appendChild(style);
+
+			eyeSocket.style = "background-color: white; margin: 20px; border-radius: 10%; overflow: hidden;"
+			eyeSocket.append(eyeLash);
+			eyeSocket.append(eye)
+			eyes.append(eyeSocket);
 		}
+
 		
 		var style = document.createElement('style');
 		var keyFrames = '.eye::before{\
@@ -123,9 +151,23 @@ BackgroundGenerator.prototype = {
 				
 				let rotation = (radian * (180 / Math.PI) * -1) + 270;
 				eye.style.transform = "rotate("+rotation+"deg)";
-				console.log(rotation);
+				// console.log(rotation);
 			});
 		})
+
+		// Eye lashes close when the coursor is over the eye
+		const eyeSockets = bg.querySelectorAll(".eye-socket");
+		eyeSockets.forEach((eyeSocket) => {
+			eyeSocket.addEventListener("mouseover", ()=>{
+				console.log("over");
+				const eyeLashes = bg.querySelectorAll(".eyeLash");
+				eyeLashes.forEach((eyeLash) => {
+					eyeLash.style = "background-color: rgb(204, 175, 115); \
+					height: 10px;\
+					animation: blink 10s infinite;";
+				});
+			})
+		});
 	},
 
 	cardAnimation: function(){
