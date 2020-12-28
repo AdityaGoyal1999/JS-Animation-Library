@@ -292,38 +292,6 @@ BackgroundGenerator.prototype = {
 		});
 	},
 
-	imageSlider: function(){
-
-		const bg = document.querySelector("#background-layer-5");
-		const imgDivContainer = bg.querySelector(".image-slider-container");
-		imgDivContainer.style = "height:500px;"
-		const imgDiv = bg.querySelector(".image-slider");
-		imgDiv.style = "position: relative; object-fit:cover;";
-		const images = imgDiv.querySelectorAll(".image-slider-image");
-		images.forEach((image, i)=>{
-			const img_start_pt = (100 * i) + "%";
-			console.log(img_start_pt)
-			image.style = `width: 100%; height: 100%; position: absolute; ${img_start_pt}; width: 100%;`;
-		});
-		// creating navigation dots
-		const dots = document.createElement("div");
-		dots.className = "dots";
-		for(let i = 0; i < images.length; i++)
-		{
-			let dot = document.createElement("div");
-			dot.className = "dot";
-			if(i === 0){
-				dot.classList.add("active");
-			}
-			dot.style = "background-color: gray; width: 10px; height: 10px; margin: 10px; border-radius: 50%; border: 2px solid #000;"
-			dots.append(dot);
-		}
-		dots.style = "display: flex; margin-top: 20px; justify-content: center; align-items: center;"
-		imgDivContainer.append(dots);
-		const activeButton = imgDivContainer.querySelector(".active");
-		activeButton.style = "background-color: rbg(238, 239, 240); border: 2px solid black; border-radius: 50%; width: 10px; height: 10px; margin: 10px;";
-	},
-
 	backgroundMove: function(backgroundColor, backgroundWidth, backgroundHeight, movementSpeed, direction){
 
 		const bg = document.querySelector("#background-layer-6");
