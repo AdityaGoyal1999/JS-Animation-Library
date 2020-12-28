@@ -161,8 +161,37 @@
 					</div>
 				</div>
 			</div>
+			
+
+			<div class="container">
+				<h4 class="background-example-heading" id="wallpaper-scroll-animation">Wallpaper Scroll Animation</h4>
+				<p class="example-info">The card takes normal text and images and converts it into a card that can flip on hovering, making the space more efficient.<br><br>Devs can change card color, card width, card height to suit their aesthetic purpose.<br><br>Get Flipping!</p>
+			</div>
+			<div id="background-layer-6" class="sample-background">
+				<div class="card-holder" style="position: relative;"></div>
+			</div>
+			<h4 class="implementation" id="card-flip-implementation">Implementation</h4>
+			<h5 class="implementation">JavaScript</h5>
+			<div class="code-block">
+				<code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.cardAnimation("275px", "325px", "rgb(238, 239, 240)");</span><span class="blue-text"> };</span></code>
+			</div>
+			<p class="example-info implementation">You can alter the colors of different parts of this background to suit the aesthetic of your website by passing the following required parameters -> (cardWidth, cardHeight, cardColor) to cardAnimation()</p>
+			
+			<h5 class="implementation">HTML</h5>
+			<p class="example-info implementation">Note: The Red ids and classes are important in HTML for library to function.</p>
+			<div class="code-block">
+                <code><span class="blue-text"><pre>
+	&ltdiv id=<span class="red-text">"background-layer-3"</span> class="sample-background"&gt
+		&ltdiv class="card-holder"&gt
+			&ltimg src="/img/girl.jpg"&gt
+			&ltp class=<span class="red-text">"card-title"</span>&gtJane Doe&lt/p&gt
+			&ltp class=<span class="red-text">"card-content"</span>&gt...&lt/p&gt
+		&lt/div&gt
+	&lt/div&gt
+				</pre></code>
 			</div>
 		</div>
+	</div>
 	
 		
 		<div class="col s3">
