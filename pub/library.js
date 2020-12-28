@@ -227,8 +227,10 @@ BackgroundGenerator.prototype = {
 		const imgDiv = bg.querySelector(".image-slider");
 		imgDiv.style = "position: relative; object-fit:cover;";
 		const images = imgDiv.querySelectorAll(".image-slider-image");
-		images.forEach((image)=>{
-			image.style = "width: 100%; height: 100%; position: absolute;"
+		images.forEach((image, i)=>{
+			const img_start_pt = (100 * i) + "%";
+			console.log(img_start_pt)
+			image.style = `width: 100%; height: 100%; position: absolute; ${img_start_pt}; width: 100%;`;
 		});
 		// creating navigation dots
 		const dots = document.createElement("div");
@@ -286,20 +288,6 @@ BackgroundGenerator.prototype = {
 	// 			star.remove();
 	// 		}, 100);
 
-	// 	});
-	// },
-
-	// rippleButton: function(){
-	// 	const bg = document.querySelector("#background-layer-2");
-	// 	// bg.style="background-color: black;"
-	// 	const buttons = document.querySelectorAll(".ripple-button");
-	// 	buttons.forEach((button)=>{
-	// 		const textContent = button.innerHTML;
-	// 		button.innerHTML = "";
-	// 		for(let i = 0; i<50; i++){
-	// 			let span = document.createElement("span");
-	// 			button.append(span);
-	// 		}
 	// 	});
 	// },
 }

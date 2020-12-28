@@ -26,67 +26,54 @@
 	      </ul>
 	    </div>
     </div>
-  	</nav>
-	<div class="row container">
-		<div class="col s6">
-			<h1>Build Websites Faster</h1>
-			<p class="para-info">Have the professional touch to your website immediately by adding animations and utilities to your website under 5 minutes.</p>
-			<a href="documentation" class="waves-effect waves-light btn-large">Get Started</a>
-			<a href="https://github.com/csc309-fall-2020/js-library-goyaladi" class="waves-effect waves-light btn-large" id="download-btn">Download <i class="large material-icons">arrow_downward</i></a>
-		</div>
-		<div class="col s6">
-			<!-- CITATION - https://cliply.co/clip/rocket-icon/ -->
-			<img id="rocket" src="img/rocket.gif">
-		</div>
-	</div>
+	</nav>
 
-	<!-- <div class="row">
-		<div class="col s4">
-			<i class="large material-icons">file_download</i>
-			<p>Download the project from github.</p>
-		</div>
-		<div class="col s4"></div>
-		<div class="col s4"></div>
-	</div> -->
 
 	<h2 id="examples-heading">All Examples</h2>
 	<p class="para-info" id="para-info">Experience all the amazing Backgroundy examples</p>
+
 	<div class="row">
-		<div class="col s8 demo-background">
+		<div class="col s9">
+			<div class="container">
+
 			<!-- Example begins -->
+			<div class="container">
+				<h4 class="background-example-heading" id="wavy-text-animation">Wavy Text</h4>
+				<p class="example-info">The text appears normal until the mouse hovers over it and starts a wavy effect.<br><br>Devs can change background color, text color, size to suit their purpose.<br><br>Get hovering!</p>
+			</div>
 			<div id="background-layer-1" class="sample-background">
 				<div class="wavy-text-div">
 					<h2 class="wavy-text">Backgroundy!</h2>
 				</div>
 			</div>
-		</div>
-		<div class="col s4">
-			<div class="container">
-				<h4 class="background-example-heading">Wavy Text</h4>
-				<p class="example-info">The text appears normal until the mouse hovers over it and starts a wavy effect.<br><br>Devs can change background color, text color, size to suit their purpose.<br><br>Get hovering!</p>
+			<h4 class="implementation" id="wavy-text-implementation">Implementation</h4>
+			<h5 class="implementation">JavaScript</h5>
+			<div class="code-block">
+                <code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.wavyText();</span><span class="blue-text"> };</span></code>
 			</div>
-		</div>
-	</div>
-
-
-
-	<div class="row">
-		<div class="col s8 demo-background">
-			<div id="background-layer-2" class="sample-background">
+			<h5 class="implementation">HTML</h5>
+			<p class="example-info implementation">Note: The Red ids and classes are important in HTML for library to function.</p>
+			<div class="code-block">
+                <code><span class="blue-text"><pre>
+	&ltdiv id=<span class="red-text">"background-layer-1"</span> class="sample-background"&gt
+		&ltdiv class="wavy-text-div"&gt
+			&lth2 class=<span class="red-text">"wavy-text"</span>&gtBackgroundy!&lt/h2&gt
+		&lt/div&gt
+	&lt/div&gt
+				</pre></code>
 			</div>
-		</div>
-		<div class="col s4">
+
 			<div class="container">
 				<h4 class="background-example-heading">Eyes Move</h4>
 				<p class="example-info">The eyes of the background are responsive to the cursor and move wherever it goes.<br><br>Have a shot!</p>
 			</div>
-		</div>
-	</div>
+			<div id="background-layer-2" class="sample-background">
+			</div>
 
 
-
-	<div class="row">
-		<div class="col s8 demo-background">
+			<div class="container">
+				<h4 class="background-example-heading">Card Flip Animation</h4>
+			</div>
 			<div id="background-layer-3" class="sample-background">
 				<div class="card-holder">
 					<!-- CITATION - https://pixabay.com/photos/girl-model-pink-fashion-portrait-2189247/ -->
@@ -95,36 +82,19 @@
 					<p class="card-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem a repellat placeat quas recusandae veritatis, eos cum molestias. Nemo deleniti tenetur nostrum ab, dolor accusamus inventore facere esse ullam molestias!</p>
 				</div>
 			</div>
-		</div>
-		<div class="col s4">
+			
 			<div class="container">
-				<h4 class="background-example-heading">Card Flip Animation</h4>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col s8 demo-background">
+				<h4 class="background-example-heading">Star Mouse Trail Effect</h4>
+			</div> 
 			<div id="background-layer-4" class="sample-background">
 				<!-- CITATION for star png that will be used- https://freepngimg.com/png/595-yellow-star-png-image -->
 				<div style="text-align: center;">
 				</div>
 			</div>
-		</div>
-		<div class="col s4">
+				
 			<div class="container">
-				<h4 class="background-example-heading">Star Mouse Trail Effect</h4>
-				<!-- Have a mouse trail effect in your website by performing the following steps-<br>
-				<ul>
-					<li>Call the javascript function from the pre-initialized object <code>bg.starMouseTrail()</code></li>
-					<li>Create a div immediately inside the body division and give it's class <code>background-layer-4</code> value.</li>
-				</ul> -->
+				<h4 class="background-example-heading">Images Slider Animation</h4>
 			</div> 
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col s8 demo-background">
 			<div id="background-layer-5" class="sample-background">
 				<div class="image-slider-container">
 					<div style="text-align: center;" class="image-slider">
@@ -133,22 +103,28 @@
 						<!-- CITATION = https://pixabay.com/photos/japan-osaka-night-asia-landmark-2014619/ -->
 						<img class="image-slider-image" src="img/image-1.jpg">
 						<img class="image-slider-image" src="img/image-2.jpg">
-						<img class="image-slider-image" src="img/image-3.jpg">s
-						
+						<img class="image-slider-image" src="img/image-3.jpg">
 					</div>
 				</div>
 			</div>
+			</div>
 		</div>
-		<div class="col s4">
-			<div class="container">
-				<h4 class="background-example-heading">Images Slider Animation</h4>
-				
-			</div> 
+	
+		
+		<div class="col s3">
+			<h3 class="on-page-heading">On Page</h3>
+            <ul>
+			  <li><a class="on-page-link" href="#wavy-text-animation">Wavy Text</a></li>
+				  <li><a class="on-page-sublink" href="#background-layer-1">Example</a></li>
+				  <li><a class="on-page-sublink" href="#wavy-text-implementation">Implementation</a></li>
+              <li><a class="on-page-link" href="#">Eyes Move</a></li>
+              <li><a class="on-page-link" href="#">Credits</a></li>
+            </ul>
 		</div>
+
 	</div>
 
-
-    
+		
 	<div class="footer">
 		<div class="container">
 			<div class="row">
@@ -162,6 +138,7 @@
 			</div>
 		</div>
 	</div>
+	
  </body>
 
 </html>

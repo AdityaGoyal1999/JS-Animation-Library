@@ -50,6 +50,24 @@
 	font-size: 1rem;
 }
 
+.implementation{
+	text-align: center;
+}
+
+code{
+    background-color: rgb(238, 239, 240);
+    /* text-align: center; */
+    /* padding: 10px; */
+    /* margin: 5px; */
+}
+
+.code-block{
+    /* text-align: center; */
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(238, 239, 240);
+}
+
 .background-layer-1{
 	text-align: center;
 }
@@ -57,7 +75,7 @@
 .wavy-text-div{
 	position: absolute;
 	margin-top: 200px;
-	margin-left: 300px;
+	margin-left: 200px;
 }
 
 .card-holder{
@@ -77,6 +95,23 @@
 	position: relative;
 	padding-top: 20px;
 	margin-left: 65px;
+}
+
+.on-page-heading{
+	/* text-align:center; */
+	margin-left: 0px;
+}
+
+.on-page-link{
+    margin: 50px;
+    color: #000;
+    text-decoration: underline;
+}
+
+.on-page-sublink{
+	margin: 80px;
+    color: #000;
+    text-decoration: underline;
 }
 
 .footer{
