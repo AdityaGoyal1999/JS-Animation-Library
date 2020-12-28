@@ -90,10 +90,10 @@
 
 			<div class="container">
 				<h4 class="background-example-heading" id="card-flip-animation">Card Flip Animation</h4>
-				<p class="example-info">The eyes of the background goes where ever the user takes the mouse. Also, the eyes blink!<br><br>Devs can change background color, eye color, eye lash color to suit their aesthetic purpose.<br><br>Get Turning!</p>
+				<p class="example-info">The card takes normal text and images and converts it into a card that can flip on hovering, making the space more efficient.<br><br>Devs can change card color, card width, card height to suit their aesthetic purpose.<br><br>Get Flipping!</p>
 			</div>
 			<div id="background-layer-3" class="sample-background">
-				<div class="card-holder">
+				<div class="card-holder" style="position: relative;">
 					<!-- CITATION - https://pixabay.com/photos/girl-model-pink-fashion-portrait-2189247/ -->
 					<img src="/img/girl.jpg">
 					<p class="card-title">Jane Doe</p>
@@ -103,15 +103,20 @@
 			<h4 class="implementation" id="card-flip-implementation">Implementation</h4>
 			<h5 class="implementation">JavaScript</h5>
 			<div class="code-block">
-				<code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.eyesMotion("rgb(234, 195, 135)", "rgb(110, 72, 39)", "rgb(204, 175, 115)");</span><span class="blue-text"> };</span></code>
+				<code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.cardAnimation("275px", "325px", "rgb(238, 239, 240)");</span><span class="blue-text"> };</span></code>
 			</div>
-			<p class="example-info implementation">You can alter the colors of different parts of this background to suit the aesthetic of your website by passing the following required parameters -> (backgroundColor, eyeColor, eyeLashColor) to eyesMotion()</p>
+			<p class="example-info implementation">You can alter the colors of different parts of this background to suit the aesthetic of your website by passing the following required parameters -> (cardWidth, cardHeight, cardColor) to cardAnimation()</p>
 			
 			<h5 class="implementation">HTML</h5>
 			<p class="example-info implementation">Note: The Red ids and classes are important in HTML for library to function.</p>
 			<div class="code-block">
                 <code><span class="blue-text"><pre>
-	&lt id=<span class="red-text">"background-layer-2"</span> class="sample-background"&gt
+	&ltdiv id=<span class="red-text">"background-layer-3"</span> class="sample-background"&gt
+		&ltdiv class="card-holder"&gt
+			&ltimg src="/img/girl.jpg"&gt
+			&ltp class=<span class="red-text">"card-title"</span>&gtJane Doe&lt/p&gt
+			&ltp class=<span class="red-text">"card-content"</span>&gt...&lt/p&gt
+		&lt/div&gt
 	&lt/div&gt
 				</pre></code>
 			</div>

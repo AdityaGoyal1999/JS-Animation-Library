@@ -171,7 +171,7 @@ BackgroundGenerator.prototype = {
 		});
 	},
 
-	cardAnimation: function(){
+	cardAnimation: function(cardWidth, cardHeight, cardColor){
 		const bg = document.querySelector("#background-layer-3");
 		const img = bg.querySelector("img");
 		img.style = "width: 250px;"
@@ -180,9 +180,7 @@ BackgroundGenerator.prototype = {
 		const card_title = bg.querySelector(".card-title");
 		const card_content = bg.querySelector(".card-content");
 		card_title.remove();
-		// card_content.remove();
-		// console.log(card_title.innerHTML)
-		// bg.querySelector(".card-content").innerHTML = "";
+		card_content.remove();
 
 		// creating the card
 		const card = document.createElement("div");
@@ -202,13 +200,12 @@ BackgroundGenerator.prototype = {
 
 		front.style = "width: 100%; \
 						height: 100%; \
-						backface-visibility: \
-						hidden; \
+						backface-visibility: hidden; \
 						position: absolute;"
 
 		const back = document.createElement("div");
 		back.className = "back";
-
+		card_content.style = "text-align: center;";
 		back.append(card_content);
 		back.style = "width: 100%; \
 					height: 100%; \
@@ -218,30 +215,40 @@ BackgroundGenerator.prototype = {
 
 		card.append(front);
 		card.append(back);
-		card.style = "position: relative; \
-						width: 275px; \
-						height: 325px; \
-						background-color: rgb(238, 239, 240); \
+		card.style = `position: absolute; \
+						width: ${cardWidth}; \
+						height: ${cardHeight}; \
+						background-color: ${cardColor}; \
 						transform-style: preserve-3d; \
-						transition: all 1s;"
+						transition: all 1s;`
+
 		parent.append(card);
 
 		card.addEventListener("mouseover", () => {
-			card.style = "transform: rotateY(180deg);position: relative; \
-			width: 275px; \
-			height: 325px; \
-			background-color: rgb(238, 239, 240); \
+			card.style = `transform: rotateY(180deg);position: absolute; \
+			width: ${cardWidth}; \
+			height: ${cardHeight}; \
+			background-color: ${cardColor}; \
 			transform-style: preserve-3d; \
-			transition: all 1s;";
+			transition: 1s;`;
+			setTimeout(()=>{
+				
+				card.style = `position: absolute; \
+				width: ${cardWidth}; \
+				height: ${cardHeight}; \
+				background-color: ${cardColor}; \
+				transform-style: preserve-3d; \
+				transition: all 1s;`
+			}, 1000)
 		});
 
 		card.addEventListener("mouseout", () => {
-			card.style = "position: relative; \
-			width: 275px; \
-			height: 325px; \
-			background-color: rgb(238, 239, 240); \
+			card.style = `position: absolute; \
+			width: ${cardWidth}; \
+			height: ${cardHeight};\
+			background-color: ${cardColor}; \
 			transform-style: preserve-3d; \
-			transition: all 1s;"
+			transition: all 1s;`
 		});
 
 	},
