@@ -39,7 +39,7 @@
 			<!-- Example begins -->
 			<div class="container">
 				<h4 class="background-example-heading" id="wavy-text-animation">Wavy Text</h4>
-				<p class="example-info">The text appears normal until the mouse hovers over it and starts a wavy effect.<br><br>Devs can change background color, text color, size to suit their purpose.<br><br>Get hovering!</p>
+				<p class="example-info">The text appears normal until the mouse hovers over it and starts a wavy effect.<br><br>Devs can change background color, text color, bounce height and animation speed to suit their purpose.<br><br>Get hovering!</p>
 			</div>
 			<div id="background-layer-1" class="sample-background">
 				<div class="wavy-text-div">
@@ -49,8 +49,10 @@
 			<h4 class="implementation" id="wavy-text-implementation">Implementation</h4>
 			<h5 class="implementation">JavaScript</h5>
 			<div class="code-block">
-                <code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.wavyText();</span><span class="blue-text"> };</span></code>
+				<code><span class="blue-text" style="margin-left: 90px;">addEventListener("DOMContentLoaded", ()=>{</span><br><span class="red-text" style="margin-left: 130px;">const bg = new BackgroundGenerator();</span><br><span class="red-text" style="margin-left: 130px;">bg.wavyText("#000", "#fff", 20, 1.25);</span><span class="blue-text"> };</span></code>
 			</div>
+			<p class="example-info implementation">You can alter the Wavy Text to suit the aesthetic of your website by passing the following required parameters -> (textColor, backgroundColor, pixelsBounceText, animationSpeed) to wavyText()</p>
+			
 			<h5 class="implementation">HTML</h5>
 			<p class="example-info implementation">Note: The Red ids and classes are important in HTML for library to function.</p>
 			<div class="code-block">

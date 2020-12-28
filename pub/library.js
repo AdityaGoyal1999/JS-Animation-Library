@@ -7,8 +7,8 @@ function BackgroundGenerator(){
 
 BackgroundGenerator.prototype = {
 
-	wavyText: function(){
-		// TODO: enter the background color and text color
+	wavyText: function(textColor, backgroundColor, pixelsBounce, animationTime){
+		
 		const bg = document.querySelector("#background-layer-1");
 		
 		const texts = bg.querySelectorAll(".wavy-text");
@@ -22,7 +22,7 @@ BackgroundGenerator.prototype = {
 				letter_span.className = "letter-span";
 				letter_span.innerHTML = text_content[i];
 				let num = i+1;
-				letter_span.style=`color: #000;\ 
+				letter_span.style=`color: ${textColor};\ 
 								   --i:${num};`;
 				
 				text.append(letter_span);
@@ -33,39 +33,38 @@ BackgroundGenerator.prototype = {
 		spans.forEach((span)=>{
 			span.onmouseover = () =>{
 				var style = document.createElement('style');
-				var keyFrames = '.letter-span{\
+				var keyFrames = `.letter-span{\
 					position: relative;\
-					display: inline-block;\
-					color: #fff;\
-					animation: animate 1s ease-in-out infinite;\
+					color: ${backgroundColor};\
+					animation: wave ${animationTime}s infinite ease-in-out;\
 					animation-delay: calc(0.1s * var(--i));\
 				}\
 				\
-				@keyframes animate{\
+				@keyframes wave{\
 				\
 					0%{\
 						transform: translateY(0px);\
 					}\
-					20%{\
-						transform: translateY(-20px);\
+					50%{\
+						transform: translateY(-${pixelsBounce}px);\
 					}\
-					40%, 100%{\
+					100%{\
 						transform: translateY(0px);\
 					}\
-				}';
+				}`;
 				style.innerHTML = keyFrames;
 				document.getElementsByTagName('head')[0].appendChild(style);
 			};
 
 			span.onmouseout = () =>{
 				var style = document.createElement('style');
-				var keyFrames = '.letter-span{\
+				var keyFrames = `.letter-span{\
 					position: relative;\
 					display: inline-block;\
-					color: #fff;\
+					color: ${backgroundColor};\
 					animation: none;\
 					animation-delay: none;\
-				}';
+				}`;
 				style.innerHTML = keyFrames;
 				document.getElementsByTagName('head')[0].appendChild(style);
 			};
