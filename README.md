@@ -5,6 +5,11 @@
 <a href="https://backgroundy.herokuapp.com/documentation" target="_blank">Docs</a><br>
 <a href="https://backgroundy.herokuapp.com/all-examples" target="_blank">All Examples</a><br>
 
+# About
+
+Backgroundy is a front end DOM manipulation library powered by JavaScript. Leaveraging the tools provided, developers can add backgrounds and utilities which the end-user can interact with.<br>
+The developer who will use this library has been kept in mind while designing. Also, the end-user's ease of use and the applications where the library can be used in a central component to the project.
+
 # Getting Started
 <h2 id="initializing">Initializing the library</h2>
           <div>
@@ -20,10 +25,7 @@
             </ol>
           </div>
 
-## About
-Backgroundy is a front end DOM manipulation library powered by JavaScript. Leaveraging the tools provided, developers can add backgrounds and utilities which the end-user can interact with.
-
 ## Credits
-The code belongs to Aditya Goyal and all rights are owned by him. <br>
-Where the work is not originally mine, I have give citations in the code.<br>
+The code belongs to Aditya Goyal and all rights are owned by him unless specified. <br>
 For contact, email him @ aditya.goyal@mail.utoronto.ca
+<a href="https://www.linkedin.com/in/adi-goyal/">LinkedIn</a>
